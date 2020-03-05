@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-button slot="end">
+            <ion-back-button text="Volver"></ion-back-button>
+        </ion-button>
+        <ion-title>Modificar noticia</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <form [formGroup]="dataForm" #noticeform="ngForm" (ngSubmit)="updateNoticia()">
+        <ion-grid>
+            <ion-row justify-content-center>
+                <ion-col align-self-center>
+                    <div text-center>
+                        <h3>Modifica la noticia</h3>
+                    </div>
+                    <div padding>
+                        <ion-item>
+                            <ion-input name="id" formControlName="id" type="text" placeholder="Id de la noticia: {{noticia[1]}}" disabled>
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="titulo" formControlName="titulo" type="text" value="{{noticia[5]}}" placeholder="Titulo...">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="subtitulo" formControlName="subtitulo" type="text" value="{{noticia[4]}}" placeholder="Subtitulo...">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="descrip" formControlName="descrip" type="text" value="{{noticia[0]}}" placeholder="Descripción...">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="imagen" formControlName="imagen" type="text" value="{{noticia[2]}}" placeholder="Url de imagen...">
+                            </ion-input>
+                        </ion-item>
+                        <ion-item>
+                            <ion-input name="imagen2" formControlName="imagen2" type="text" value="{{noticia[3]}}" placeholder="Url de imagen 2...">
+                            </ion-input>
+                        </ion-item>
+                    </div>
+                    <div padding>
+                        <ion-button size="large" type="submit" expand="block">Crear</ion-button>
+                    </div>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+
+</ion-content>

@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-button slot="end">
+            <ion-back-button text="Volver"></ion-back-button>
+        </ion-button>
+        <ion-title>Noticias</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div *ngFor="let n of noticia">
+        <ion-item [routerLink]="['/', 'news-descrip', key, n.id]">
+            <ion-avatar slot="start">
+                <img src="{{n.imagen}}">
+            </ion-avatar>
+            <ion-label>
+                <h2>{{n.titulo}}</h2>
+                <h3>{{n.subtitulo}}</h3>
+            </ion-label>
+        </ion-item>
+    </div>
+
+    <div style="height: 90px;"></div>
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button [routerLink]="['/', 'new-noticia', key]" color="danger">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>

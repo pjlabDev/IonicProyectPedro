@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Home</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="container">
+        <ion-card *ngFor="let n of noticias">
+            <img id="img2" src="{{n.imagen}}" />
+            <ion-card-header>
+                <ion-card-title>{{n.titulo}}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+                {{n.subtitulo}}
+                <br>
+                <ion-button [routerLink]="['/', 'news', n.key]">Ver</ion-button>
+            </ion-card-content>
+        </ion-card>
+    </div>
+
+</ion-content>

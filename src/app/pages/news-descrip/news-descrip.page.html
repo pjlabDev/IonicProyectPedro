@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-button slot="end">
+            <ion-back-button text="Volver"></ion-back-button>
+        </ion-button>
+        <ion-title>Desarrollo de la noticia</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+    <div class="container">
+        <h1 style="text-align: center;">{{noticia[5]}}</h1>
+        <ion-img src="{{noticia[2]}}"></ion-img>
+        <p class="contentAbout">{{noticia[0]}}</p>
+        <ion-img src="{{noticia[3]}}"></ion-img>
+    </div>
+    <div style="height: 90px;"></div>
+    <ion-fab horizontal="end" vertical="bottom" slot="fixed">
+        <ion-fab-button [routerLink]="['/', 'news', this.key]" (click)="removeNoticia()" color="danger">
+            <ion-icon name="trash-outline"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+    <ion-fab horizontal="start" vertical="bottom" slot="fixed">
+        <ion-fab-button [routerLink]="['/', 'update-news', this.key, this.key2]" color="primary">
+            <ion-icon name="apps"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
+
+</ion-content>
